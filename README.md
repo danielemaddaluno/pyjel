@@ -7,9 +7,18 @@ Apachepython basic webapp for Jelastic with ASGI
 
 2. Under `Deployments`, `Deploy from GIT / SVN` paste `https://github.com/danielemaddaluno/pyjel.git`, select `Check and auto-deploy updates` 
 
-3. Then click on `Hooks` and then on `Pre` and add this text:
+3. Then click on `Hooks` and then on `Post` and add this text:
    ```bash
-   # move inside web ROOT
+   # run the setup script that will add all the required dependencies to the virtual env
+   sh ./ROOT/setup.sh
+   ```
+   This will run the setup script that will add all the required dependencies to the virtual env.
+   
+   If something goes wrong, for debug purposes you could use something more complex, like this:
+   ```bash
+   pwd > /var/www/webroot/pwd.txt
+   
+   # move inside webroot folder
    cd /var/www/webroot
    
    # run the setup script that will add all the required dependencies to the virtual env
