@@ -1,7 +1,7 @@
 # pyjel
 Apachepython basic webapp for Jelastic with ASGI
 
-## Setup
+## Deploy on Jelastic
 
 1. Create a new Python environment on Jelastic, select a jelastic `apachepython` container, it's suggested to select the container `2.4.57-python-3.9.18` (other containers may not work)
 
@@ -26,3 +26,19 @@ Apachepython basic webapp for Jelastic with ASGI
    ```
 
 5. Click `Deploy`
+
+## Test Locally
+You can test locally:
+1. with a WSGI running:
+   ```bash
+   gunicorn wsgi:application
+   ```
+2. with a ASGI running (bypassing the WSGI):
+   ```bash
+   uvicorn app.app:app
+   ```
+   or running
+   ```bash
+   python app/app.py
+   ```
+   or directly from the IDE running the `app.py` file.
