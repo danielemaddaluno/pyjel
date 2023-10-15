@@ -1,9 +1,9 @@
 # pyjel
-Apachepython basic webapp for Jelastic with ASGI
+Apache python basic webapp for Jelastic with ASGI
 
 ## Deploy on Jelastic
 
-1. Create a new Python environment on Jelastic, select a jelastic `apachepython` container, it's suggested to select the container `2.4.57-python-3.9.18` (other containers may not work)
+1. Create a new Python environment on Jelastic, select a jelastic `apachepython` container, it's suggested to select the container `2.4.57-python-3.9.18` or `2.4.57-python-3.11.6` (other containers may not work)
 
 2. Under `Deployments`, `Deploy from GIT / SVN` paste `https://github.com/danielemaddaluno/pyjel.git`, select `Check and auto-deploy updates` 
 
@@ -28,12 +28,12 @@ Apachepython basic webapp for Jelastic with ASGI
 5. Click `Deploy`
 
 ## Test Locally
-You can test locally:
-1. with a WSGI running:
+You can test locally: 
+ - with a WSGI running:
    ```bash
    gunicorn wsgi:application
    ```
-2. with a ASGI running (bypassing the WSGI):
+ - otherwise with a ASGI running (bypassing the WSGI):
    ```bash
    uvicorn app.app:app
    ```

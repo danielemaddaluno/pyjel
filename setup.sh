@@ -1,5 +1,5 @@
 #!/bin/sh
-virtualenv virtenv
-source virtenv/bin/activate
+virtualenv venv
+source venv/bin/activate
 pip install -r requirements.txt
 deactivate
