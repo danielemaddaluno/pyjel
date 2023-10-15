@@ -31,17 +31,27 @@ Apache python basic webapp for Jelastic with ASGI
 5. Click `Deploy`
 
 ## Test Locally
-You can test locally: 
- - with a WSGI running:
+To test locally with PyCharm:
+
+1. Click on `Add New Interpreter`, `Add Local Interpreter...`, `Virtualenv Environment`, `New`.
+
+2. Then add requirements with:
    ```bash
-   gunicorn wsgi:application
+   sh ./setup.sh
    ```
- - otherwise with a ASGI running (bypassing the WSGI):
-   ```bash
-   uvicorn app.app:app
-   ```
-   or running
-   ```bash
-   python app/app.py
-   ```
-   or directly from the IDE running the `app.py` file.
+   Sometimes a restart of PyCharm is required.
+
+3. Then:
+   - to test with a WSGI run:
+     ```bash
+     gunicorn wsgi:application
+     ```
+   - to test with a ASGI run (bypassing the WSGI):
+     ```bash
+     uvicorn app.app:app
+     ```
+     or
+     ```bash
+     python app/app.py
+     ```
+     or run it directly from the IDE launching the `app.py` file.
