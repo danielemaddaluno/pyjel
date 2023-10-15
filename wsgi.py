@@ -1,6 +1,7 @@
 import os, sys
 
-virtenv = os.path.expanduser('~') + '/venv/'
+dirpath = os.path.dirname(os.path.abspath(__file__))
+virtenv = dirpath + '/venv/'
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 try:
     if sys.version.split(' ')[0].split('.')[0] == '3':
@@ -10,8 +11,7 @@ try:
 except IOError:
     pass
 
-sys.path.append(os.path.expanduser('~'))
-sys.path.append(os.path.expanduser('~') + '/ROOT/')
+sys.path.append(dirpath)
 
 from app import app
 from a2wsgi import ASGIMiddleware
