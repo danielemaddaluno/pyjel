@@ -10,7 +10,8 @@ Apache python basic webapp for Jelastic with ASGI
 3. Then click on `Hooks` and then on `Post` and add this text:
    ```bash
    # run the setup script that will add all the required dependencies to the virtual env
-   cd ROOT
+   mv ./ROOT/requirements.txt .
+   mv ./ROOT/setup.sh .
    sh ./setup.sh
    ```
    This will run the setup script that will add all the required dependencies to the virtual env.
@@ -19,8 +20,11 @@ Apache python basic webapp for Jelastic with ASGI
    ```bash
    pwd > /var/www/webroot/pwd.txt
    
+   cd /var/www/webroot
+   
    # run the setup script that will add all the required dependencies to the virtual env
-   cd /var/www/webroot/ROOT
+   mv ./ROOT/requirements.txt .
+   mv ./ROOT/setup.sh .
    sh ./setup.sh
    ```
 
